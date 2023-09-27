@@ -23,4 +23,9 @@ public class CustomerServiceImpl implements CustomerService {
         customerRepository.deleteById(id);
         return "Customer removed successfully";
     }
+
+    @Override
+    public boolean customerExists(String name, String email) {
+        return customerRepository.existsByNameAndEmail(name, email);
+    }
 }
